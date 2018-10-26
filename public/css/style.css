@@ -1,0 +1,349 @@
+
+body {
+		background: #ffffff;
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+		font-weight: 400;
+}
+
+
+/*---------------------------------------
+    Typorgraphy              
+-----------------------------------------*/
+h1,h2,h3,h4,h5,h6 {
+  font-weight: 600;
+}
+
+h3,h5 {
+  font-weight: 500;
+}
+
+
+h1 {
+    color: #ffffff;
+    font-size: 84px;
+    letter-spacing: 5px;
+    text-align: center;
+    font-family: italic Georgia, serif;
+}
+
+h2 {
+  font-size: 30px;
+  text-transform: uppercase;
+}
+
+h3 {
+  line-height: 36px;
+}
+
+h5 {
+    letter-spacing: 1px;
+    padding-top: 10px;
+}
+
+p {
+    color: #ffffff;
+    font-size: 22px;
+    line-height: 28px;
+    text-align: right ;
+    font-family: italic Georgia, serif;
+}
+
+a {
+  text-decoration: none !important;
+  outline: none;
+}
+
+
+/*---------------------------------------
+    General               
+-----------------------------------------*/
+.section-title {
+  margin-bottom: 32px;
+}
+
+#overview,
+#register {
+  padding-top: 14rem;
+  padding-bottom: 14rem;
+}
+
+#detail, #video,
+#speakers, 
+#program,
+#sponsors, 
+#contact, footer {
+    padding-top: 10rem;
+    padding-bottom: 10rem;
+}
+
+#detail,
+#speakers, #sponsors,
+footer {
+  text-align: center;
+}
+
+#overview h3,
+#detail h3, #video h3,
+#register h3,
+#venue h3,
+#contact h3 {
+    padding-bottom: 12px;
+}
+
+#home .btn,
+#contact .btn {
+    background: transparent;
+    border: 2px solid #ffffff;
+    border-radius: 0px;
+    color: #ffffff;
+    font-weight: 600;
+    letter-spacing: 1px;
+    font-size: 12px;
+    padding: 14px 42px;
+    margin-top: 42px;
+    margin-right: 12px;
+    -webkit-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
+}
+
+#home .btn-danger,
+#contact .btn-danger {
+    background: #f2545f;
+    border-color: transparent;
+}
+
+#contact .btn {
+  border-radius: 100px;
+}
+
+#home .btn-danger:hover {
+  background: transparent;
+  border-color: #ffffff;
+  color: #ffffff;
+}
+
+#contact .btn-danger:hover {
+  background: #222;
+}
+
+#home .btn-default:hover {
+    background: #ffffff;
+    color: #333333;
+    border-color: transparent;
+}
+
+.parallax-section {
+  background-attachment: fixed !important;
+  background-size: cover !important;
+}
+
+
+
+/*---------------------------------------
+    Preloader section              
+-----------------------------------------*/
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 99999;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  background: none repeat scroll 0 0 #ffffff;
+}
+
+.sk-rotating-plane {
+  width: 50px;
+  height: 50px;
+  background-color: #222;
+  -webkit-animation: sk-rotatePlane 1.2s infinite ease-in-out;
+          animation: sk-rotatePlane 1.2s infinite ease-in-out; }
+
+@-webkit-keyframes sk-rotatePlane {
+  0% {
+    -webkit-transform: perspective(120px) rotateX(0deg) rotateY(0deg);
+            transform: perspective(120px) rotateX(0deg) rotateY(0deg); }
+  50% {
+    -webkit-transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
+            transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg); }
+  100% {
+    -webkit-transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+            transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg); } }
+
+@keyframes sk-rotatePlane {
+  0% {
+    -webkit-transform: perspective(120px) rotateX(0deg) rotateY(0deg);
+            transform: perspective(120px) rotateX(0deg) rotateY(0deg); }
+  50% {
+    -webkit-transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
+            transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg); }
+  100% {
+    -webkit-transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+            transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg); } }
+
+
+
+/*---------------------------------------
+    Navigation Links section              
+-----------------------------------------*/
+.custom-navbar {
+    margin-bottom: 0;
+    background-color: #101010;
+}
+
+.custom-navbar .navbar-brand {
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 3rem;
+    line-height: 40px;
+}
+.change {
+    background:rgba(0,0,0,0);
+}
+.custom-navbar .nav li a {
+    color: #ddd;
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+    line-height: 40px;
+    transition: all 0.4s ease-in-out;
+}
+
+.custom-navbar .nav li a:hover {
+    background: transparent;
+    color: #66ccff;
+}
+
+.custom-navbar .navbar-nav > li > a:hover,
+.custom-navbar .navbar-nav > li > a:focus {
+  background-color: transparent;
+}
+
+.custom-navbar .nav li.active > a {
+    background-color: transparent;
+    color: #ffffff;
+}
+
+.custom-navbar .navbar-toggle {
+    border: none;
+    padding-top: 10px;
+}
+
+.custom-navbar .navbar-toggle {
+    background-color: transparent;
+}
+
+.custom-navbar .navbar-toggle .icon-bar {
+    background: #ffffff;
+    border-color: transparent;
+}
+
+@media(min-width:768px) {
+    .custom-navbar {
+        padding: 20px 0;
+        border-bottom: 0;
+        background: 0 0; 
+    }
+    .custom-navbar.top-nav-collapse {
+        background: #101010;
+        padding: 0;
+    }
+
+}
+
+
+
+/*---------------------------------------
+    HOME section              
+-----------------------------------------*/
+#home {
+    background: url('../images/intro-bg.jpg') 50% 0 repeat-y fixed;
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-position: center center;
+    color: #ffffff;
+    display: -webkit-box;
+    display: -webkit-flex;
+     display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+     -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+    height: 100vh;
+    text-align: center;
+}
+
+#home h3 {
+  letter-spacing: 2px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*---------------------------------------
+   Footer section              
+-----------------------------------------*/
+footer {
+  background-attachment: fixed;
+}
+
+
+
+/* Back top */
+.go-top {
+  background-color: #222;
+  bottom: 2em;
+  right: 2em;
+  color: #ffffff;
+  font-size: 32px;
+  display: none;
+  position: fixed;
+  text-decoration: none;
+  width: 60px;
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+  transition: all 0.4s ease-in-out;
+}
+
+.go-top:hover {
+    background: #f2545f;
+    color: #ffffff;
+}
+
+
+
+
+
+
+
+
+ 
+
+
+

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <title> The Food Freaks </title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Plugin CSS -->
+    <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/creative.min.css" rel="stylesheet">   
+    <link rel="stylesheet" href="css/bootstrap.css" />
+
+  </head>
+
+  <body id="page-top">
+
+    <!-- Navigation -->
+    
+
+    <header class="masthead text-center text-white d-flex">
+      <div class="container my-auto">
+        <div class="row">
+          <div class="col-lg-10 mx-auto">
+            <h1 class="text-uppercase">
+              <strong>THE FOOD FREAKS</strong>
+            </h1>
+            <hr>
+          </div>
+          <div class="col-lg-8 mx-auto">
+            <p class="text-faded mb-5">Grab the location of the food and snack trucks at your finger tips</p>
+            <a class="btn btn-primary btn-xl js-scroll-trigger" href="#about">SETTINGS &nbsp;</a>
+            <a class="btn btn-primary btn-xl js-scroll-trigger"  href="/logout">LOGOUT</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section class="bg-primary" id="about">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mx-auto text-center">
+           <div class="col-md-8" >
+           	<H2 class="text-faded mb-5">SETTINGS</H2>
+                                        <!-- Nav tabs -->
+                                        <ul class="nav nav-tabs">
+                                            
+                                           
+                        <li><a href="#menu" data-toggle="tab">UPDATE MENU</a></li>
+                        <li><a href="#upload" data-toggle="tab">UPload image</a></li>
+					    
+                                        </ul>
+                                        <!-- Tab panes -->
+                                        <div class="tab-content">
+                                            
+<div class="tab-pane" id="menu">
+                        <div class="container" id="signup">
+                        <form class="form-horizontal" action="/update/<%= file[0].id %>/menu?_method=PUT" method="POST">
+                                <fieldset>
+                                  
+                          <div class="form-group">
+                                    <label for="textArea" class="col-lg-2 control-label">Tiffins</label>
+                                    <div class="col-lg-4">
+                                      <textarea name="tiffins" class="form-control" rows="1" id="textArea"></textarea>
+                                    </div>
+
+                                  </div>  
+			 <div class="form-group">
+                                    <label for="textArea" class="col-lg-2 control-label">Starters</label>
+                                    <div class="col-lg-4">
+                                      <textarea name="starters" class="form-control" rows="1" id="textArea"></textarea>
+                                    </div>
+
+                                  </div> 
+			 <div class="form-group">
+                                    <label for="textArea" class="col-lg-2 control-label">Drinks</label>
+                                    <div class="col-lg-4">
+                                      <textarea name="drinks" class="form-control" rows="1" id="textArea"></textarea>
+                                    </div>
+
+                                  </div> 
+			 <div class="form-group">
+                                    <label for="textArea" class="col-lg-2 control-label">Veg Items</label>
+                                    <div class="col-lg-4">
+                                      <textarea name="veg" class="form-control" rows="1" id="textArea"></textarea>
+                                    </div>
+
+                                  </div>   
+			 <div class="form-group">
+                                    <label for="textArea" class="col-lg-2 control-label">NON-Veg Items</label>
+                                    <div class="col-lg-4">
+                                      <textarea name="nonveg" class="form-control" rows="1" id="textArea"></textarea>
+                                    </div>
+
+                                  </div>
+                                  <div class="form-group">
+                                    <label for="textArea" class="col-lg-2 control-label">Location</label>
+                                    <div class="col-lg-4">
+                                      <textarea name="location" class="form-control" rows="1" id="textArea"></textarea>
+                                    </div>
+
+                                  </div>
+        <div class="form-group">
+                                      <label for="textArea" class="col-lg-2 control-label">Timings</label>
+                                      <div class="col-lg-4">
+                                        <textarea name="timing" class="form-control" rows="1" id="textArea"></textarea>
+                                      </div>
+  
+                                    </div>
+			
+                                  <div class="form-group">
+                                    <div class="col-lg-10 col-lg-offset-2">
+                                      <button type="reset" class="btn btn-default">Reset</button>
+                                      <button type="submit" class="btn btn-primary" href="#">Submit</button>
+                                    </div>
+                                  </div>
+                                </fieldset>
+                                
+		 </form>
+
+		 
+  </div>
+		 
+  </div>  
+  <div class="tab-pane" id="upload">
+      <div class="container" >
+         
+              <h1>FileUpload</h1>
+              <div class="alert alert-danger" role="alert"><%= typeof msg != 'undefined' ? msg : '' %></div>
+              
+              <form action="/upload" method="POST" enctype="multipart/form-data">
+                  <input type="file" name="myImage"><br>
+                  <button type="submit" class="btn">Submit</button>
+              </form><br>
+              <img src="<%= typeof file != 'undefined' ? file : '' %>" alt="" class="img-responsive">
+          </div>
+      </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="container">
+        <div class="row text-center" style="display:flex ; flex-wrap : wrap ;">
+               <% file[0].images.forEach(function(i){ %>
+                <div class="col-md-3 col-sm-6">
+                    <div class="thumbnail">
+                            <img src="/upload/<%= i.filename %>" alt="">
+                            
+                    </div>
+                    <p>
+                        <li>bfuijeak</li>
+                    </p>
+                </div>
+                <% }); %>
+        </div>
+</div>
+
+
+    
+
+
+
+
+    
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="vendor/scrollreveal/scrollreveal.min.js"></script>
+    <script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="js/creative.min.js"></script>
+
+  </body>
+
+</html>

@@ -1,0 +1,28 @@
+{
+  "name": "v1",
+  "version": "1.0.0",
+  "description": "C4S",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ravi",
+  "license": "ISC",
+  "dependencies": {
+    "alert-node": "^1.0.2",
+    "async": "^2.6.0",
+    "body-parser": "^1.18.2",
+    "bootstrap": "^3.3.7",
+    "crypto": "^1.0.1",
+    "ejs": "^2.5.7",
+    "express": "^4.16.2",
+    "express-session": "^1.15.6",
+    "mongodb": "^3.0.2",
+    "mongoose": "^5.0.4",
+    "nodemailer": "^4.6.4",
+    "nodemon": "^1.17.2",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
+    "passport-local-mongoose": "^4.5.0"
+  }
+}

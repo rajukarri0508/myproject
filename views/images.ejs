@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+            <title >
+                YELPCAMP        
+            </title>
+            <!-- Latest compiled and minified CSS -->
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+            <!-- jQuery library -->
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+            <!-- Latest compiled JavaScript -->
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    
+    </head>
+    <body>
+            <nav class="navbar navbar-default"> </nav>
+
+<div class="container">
+        <div class="row text-center" style="display:flex ; flex-wrap : wrap ;">
+               <% file.forEach(function(i){ %>
+                <div class="col-md-3 col-sm-6">
+                    <div class="thumbnail">
+                            <img src="/upload/<%= i.filename %>" alt="">
+                            
+                    </div>
+                    <p>
+                        <li>bfuijeak</li>
+                    </p>
+                </div>
+                <% }); %>
+        </div>
+</div>
+
+
+<p><b>TRADEMARK YELPCAMP 2017</b></p>
+</body>
+</html> 

@@ -1,0 +1,45 @@
+<html>
+       
+<body>
+       
+    <h1><%= data.name %></h1>
+    <h3><%= data.phno %></h3>
+
+<% var n = data.images.length %>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            
+                <img src="/upload/<%= data.images[n-1].filename %>" alt=""  width="50%" height="50%" />
+            
+        </div>
+        <div class="col-md-6">
+                
+            
+            <h1><%= data.Tiffins %></h1>
+            <h1><%= data.Starters %></h1>
+            <h1><%= data.Drinks %></h1>
+            <h1><%= data.Veg_Items %></h1>
+            <h1><%= data.NON_Veg_Items %></h1>
+            <h1><%= data.Timings %></h1>
+        </div>
+    </div>
+</div>
+
+<div class="row" >
+    <div class="col-md-12 col-sm-12 wow bounceIn">
+        <div class="section-title">
+            <center><button  class="btn btn-primary"><a href="/" class="btn btn-primary"><h3> Goto Back</h3> </a></button></center>
+        </div>
+    </div>
+    
+</div>
+
+<div style="width: 100%">
+    <iframe width="100%" height="220px" src="https://maps.google.com/maps?width=100%&amp;height=600&amp;hl=en&amp;q=<%= data.location %>+(Map)&amp;ie=UTF8&amp;t=&amp;z=14&amp;iwloc=B&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0">
+    <a href="https://www.maps.ie/create-google-map/">Google Maps iframe generator</a></iframe></div><br />
+
+
+
+</body>
+</html>
