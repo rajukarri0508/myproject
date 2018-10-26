@@ -560,7 +560,7 @@ app.get("/search" , function(req,res){
 function escapeRegex(text) {
     return text.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&");
 };
-
-app.listen("3000","localhost",function(){
-    console.log("localhost:3000 CONNECTION ESTABLISHED FOR THE FOOD FREAKS........!. # @ # .! ");
-});
+app.listen(process.env.PORT,process.env.IP);
+// app.listen("3000","localhost",function(){
+//     console.log("localhost:3000 CONNECTION ESTABLISHED FOR THE FOOD FREAKS........!. # @ # .! ");
+// });
