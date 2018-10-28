@@ -1,28 +1,33 @@
 {
-  "name": "v1",
+  "name": "foodfreaks",
   "version": "1.0.0",
-  "description": "C4S",
+  "description": "",
   "main": "app.js",
   "scripts": {
     "start": "node app.js"
   },
-  "author": "Ravi",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rajukarri0508/myproject.git"
+  },
+  "author": "",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rajukarri0508/myproject/issues"
+  },
+  "homepage": "https://github.com/rajukarri0508/myproject#readme",
   "dependencies": {
-    "alert-node": "^1.0.2",
-    "async": "^2.6.0",
-    "body-parser": "^1.18.2",
-    "bootstrap": "^3.3.7",
-    "crypto": "^1.0.1",
-    "ejs": "^2.5.7",
-    "express": "^4.16.2",
+    "alert-node": "^1.2.2",
+    "connect-flash": "^0.1.1",
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
     "express-session": "^1.15.6",
-    "mongodb": "^3.0.2",
-    "mongoose": "^5.0.4",
-    "nodemailer": "^4.6.4",
-    "nodemon": "^1.17.2",
+    "method-override": "^3.0.0",
+    "mongoose": "^5.3.7",
+    "multer": "^1.4.1",
+    "nodemailer": "^4.6.8",
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
-    "passport-local-mongoose": "^4.5.0"
+    "passport-local-mongoose": "^5.0.1"
   }
 }
