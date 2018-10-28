@@ -24,9 +24,12 @@ app.use( express.static( "public" ) );
 app.use(flash());
 
 //db connection
-mongoose.Promise = global.Promise;
-mongoose.connect("mongodb://localhost:27017/FoodFreaks");
+// mongoose.Promise = global.Promise;
+// mongoose.connect("mongodb://localhost:27017/FoodFreaks");
+// mongoose.connect("mongodb://foodfreaks:foodfreaks1@ds153239.mlab.com:53239/foodfreaks");
+var mongoDB = "mongodb://foodraja:foodraja123@ds153239.mlab.com:53239/foodfreaks";
 
+mongoose.connect(mongoDB);
 //var CustomerSchema = new mongoose.Schema({
     //name     : String,
     //email    : String,
@@ -144,25 +147,25 @@ app.post("/upload" , isLoggedIn, (req,res) => {
         if(err){
             res.render("/service", { msg : err });
         }else{
-            console.log(req.file);
+            //console.log(req.file);
             
             Image.create(req.file,function(err,newlyCreated){
                 if(err){
-                    console.log(err);
+                    //console.log(err);
                 }else{
-                    console.log(newlyCreated);
-                    console.log(req.user.username);
+                    //console.log(newlyCreated);
+                    //console.log(req.user.username);
                     Owner.findOne({email : req.user.username}, function(err,found){
                         if(err){
-                            console.log(err);
+                            //console.log(err);
                         }else{
-                            console.log(found);
+                            //console.log(found);
                             found.images.push(newlyCreated);
                             found.save(function(err,finalFound){
                                 if(err){
-                                    console.log(err);
+                                    //console.log(err);
                                 }else{
-                                    console.log(finalFound);
+                                    //console.log(finalFound);
                                     // res.redirect("/service");
                                     res.redirect("/service");
                                 }
@@ -189,7 +192,7 @@ app.post("/upload" , isLoggedIn, (req,res) => {
 app.get("/",function(req,res){
     Owner.find({}).populate("images").exec(function(err,user){
         if(err){
-            console.log(err);
+            //console.log(err);
             // res.redirect("/");
         }else{
             var noMatch = "";
@@ -213,7 +216,7 @@ app.get("/",function(req,res){
             if(user.length < 1 ){
                 noMatch = " Not Found "
             }
-            console.log(user);
+            //console.log(user);
             res.render("home" , { currentUser : req.user , owners : user , noMatch :noMatch , search : "" } ) ;
             
             
@@ -225,9 +228,9 @@ app.get("/",function(req,res){
 app.get("/service", isLoggedIn,function(req,res){
     Owner.find({email:req.user.username}).populate("images").exec(function(err,data){
         if(err){
-            console.log(err);
+            //console.log(err);
         }else{
-            console.log(data);
+            //console.log(data);
             res.render("service" , { file : data } ) ;
         }
     });
@@ -237,7 +240,7 @@ app.get("/service", isLoggedIn,function(req,res){
 app.get("/service/:id/view" , function(req,res){
     Owner.findById( req.params.id).populate("images").exec(function(err,data){
         if(err){
-            console.log(err);
+            //console.log(err);
         }else{
              //======// checking for empty images and making non empty
                     
@@ -277,10 +280,10 @@ app.put("/update/:id/menu" , function(req,res){
     };
     Owner.findByIdAndUpdate( req.params.id , newMenu , function(err,updated){
         if(err){
-            console.log(err);
+            //console.log(err);
             res.send("ERROR OCCURED"+err);
         }else{
-            console.log(updated);
+            //console.log(updated);
             res.redirect("/service");
         }
     });
@@ -335,7 +338,7 @@ app.post('/forgotPassword', function(req, res, next) {
             'If you did not request this, please ignore this email and your password will remain unchanged.\n'
         };
         smtpTransport.sendMail(mailOptions, function(err) {
-          console.log('mail sent');
+          //console.log('mail sent');
           req.flash('success', 'An e-mail has been sent to ' + user.username + ' with further instructions.');
           done(err, 'done');
         });
@@ -435,22 +438,22 @@ app.post("/addowner", function(req, res)
     };
     Owner.create(newOwner,function(err,newlyCreated){
         if(err){
-            console.log(err);
+            //console.log(err);
         }else{
-            console.log(newlyCreated);
+            //console.log(newlyCreated);
         }
     });
     Auth.register(new Auth({username:req.body.username,type:"O"}),req.body.password, function(err,user)
     {
         if(err)
         {
-            console.log(err);
+            //console.log(err);
         }
         passport.authenticate("local")(req, res, function()
         {
             Owner.find({}).populate("images").exec(function(err,user){
                 if(err){
-                    console.log(err);
+                    //console.log(err);
                     // res.redirect("/");
                 }else{
                     var noMatch = "";
@@ -474,7 +477,7 @@ app.post("/addowner", function(req, res)
                     if(user.length < 1 ){
                         noMatch = " Not Found "
                     }
-                    console.log(user);
+                    //console.log(user);
                     res.render("home" , { currentUser : req.user , owners : user , noMatch :noMatch , search : "" } ) ;
                 }
         
@@ -487,7 +490,7 @@ app.post("/authuser",passport.authenticate("local"),function(req,res)
 {
     Auth.findOne({username:req.body.username},function(err,user){
         if(err){
-            console.log(err);
+            //console.log(err);
             req.flash("error", err.message);
             res.redirect("/");
         }
@@ -521,7 +524,7 @@ app.get("/search" , function(req,res){
         const regex = new RegExp(escapeRegex(req.query.location_search), 'gi');
         Owner.find({  location: regex  }).populate("images").exec(function(err,user){
             if(err){
-                console.log(err);
+                //console.log(err);
                 // res.redirect("/");
             }else{
                 var noMatch = "";
@@ -545,16 +548,13 @@ app.get("/search" , function(req,res){
                 if(user.length < 1 ){
                     noMatch = "404 Halls Not Found "
                 }
-                console.log(user);
+                //console.log(user);
                 res.render("home" , { currentUser : req.user , owners : user  , noMatch : noMatch ,search : req.query.location_search} ) ;
                 
             }
         });
     }
- 
-    
-    
-    
+
 });
 
 function escapeRegex(text) {
